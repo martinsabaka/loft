@@ -20,9 +20,9 @@ export class SearchComponent implements OnInit {
   processForm(){
     this.profileService.updateRepository(this.input).subscribe(profile => {
       if (profile.total_count > 0){
-        this.emptyResponse = false;
         this.profileService.getRepository(profile.items[0]['url']).subscribe(repoData => {
           this.repoDetails = repoData;
+          this.emptyResponse = false;
         }, error => this.error = error);
       } else {
         this.emptyResponse = true;
