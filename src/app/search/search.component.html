@@ -1,0 +1,131 @@
+<div class="jumbotron" id="search">
+  <div class="container text-center">
+    <div id='search-component'>
+		<h1>Front-End Code Test</h1>
+		<h3>GitHub Repo Search</h3>
+		<form class="form-inline" (ngSubmit)="processForm()">
+		  <input type="text" class="form-control" id="search-bar" placeholder="Search Github Repos" name="input" [(ngModel)]="input"><button type="submit" class="btn btn-primary" id="submit-btn">Search</button>
+		</form>	
+	</div>
+  </div>
+</div>
+
+<div class="jumbotron" id="result">
+  <div *ngIf="!error && !emptyResponse" class="container text-center">
+    <div *ngIf="repoDetails">
+	  <h2><small>The top search result is</small></h2>
+	  <h1>{{ repoDetails.name }}</h1>
+	  <div class="container">
+	  	<div class="row" id="first-row">
+	  		<div class="col-md-12">
+	  			<div class="panel panel-default">
+			      <div class="panel-body">
+		            <h4>General Info</h4>
+		            <div class="col-md-6">
+		              <table class="table borderless">
+		                <tbody>
+		                  <tr>
+		                    <th>Full name</th>
+		                    <td>{{ repoDetails.full_name }}</td>
+		                  </tr>
+		                  <tr>
+		                    <th>Description</th>
+		                    <td>{{ repoDetails.description }}</td>
+		                  </tr>
+		                  <tr>
+		                    <th>URL</th>
+		                    <td><a href="{{ repoDetails.html_url }}">{{ repoDetails.html_url }}</a></td>
+		                  </tr>
+		                  <tr>
+		                    <th>Language</th>
+		                    <td>{{ repoDetails.language }}</td>
+		                  </tr>
+		                </tbody>
+		              </table>
+		            </div>
+		            <div class="col-md-6">
+		              <table class="table borderless">
+		                <tbody>
+		                  <tr>
+		                    <th>Private</th>
+		                    <td>{{ repoDetails.private }}</td>
+		                  </tr>
+		                  <tr>
+		                    <th>Created at</th>
+		                    <td>{{ repoDetails.created_at | date:'d/M/yyyy' }}</td>
+		                  </tr>
+		                  <tr>
+		                    <th>Updated at</th>
+		                    <td>{{ repoDetails.updated_at | date:'d/M/yyyy' }}</td>
+		                  </tr>
+		                </tbody>
+		              </table>
+		            </div>
+		          </div>
+			    </div>	
+	  		</div>
+		  </div>
+	  	<div class="row" id="second-row">
+	  		<div class="col-md-6">
+	  			<div class="panel panel-default" id="panel-left">
+			      <div class="panel-body">
+		            <h4>Usage Info</h4>
+		            <table class="table borderless">
+		              <tbody>
+		                <tr>
+		                  <th><img src="../assets/images/star.svg">Starred by</th>
+		                  <td>{{ repoDetails.subscribers_count }}</td>
+		                </tr>
+		                <tr>
+		                  <th><img src="../assets/images/watch.svg">Watched by</th>
+		                  <td>{{ repoDetails.watchers }}</td>
+		                </tr>
+		                <tr>
+		                  <th><img src="../assets/images/repo-forked.svg">Forked by</th>
+		                  <td>{{ repoDetails.forks }}</td>
+		                </tr>
+		                <tr>
+		                  <th><img src="../assets/images/law.svg">Licence</th>
+		                  <td>{{ repoDetails.license.spdx_id }}</td>
+		                </tr>
+		              </tbody>
+		            </table>
+		          </div>
+			    </div>	
+	  		</div>
+	  		<div class="col-md-6">
+	  			<div class="panel panel-default" id="panel-right">
+			      <div class="panel-body">
+		            <h4>Owner Info</h4>
+		            <table class="table borderless">
+		              <tbody>
+		                <tr>
+		                  <th>Owner</th>
+		                  <td>{{ repoDetails.owner.login }}</td>
+		                </tr>
+		                <tr>
+		                  <th>Owner id</th>
+		                  <td>{{ repoDetails.owner.id }}</td>
+		                </tr>
+		                <tr>
+		                  <th>Type</th>
+		                  <td>{{ repoDetails.owner.type }}</td>
+		                </tr>
+		              </tbody>
+		            </table>
+		            <img id="avatar" src="{{ repoDetails.owner.avatar_url }}">  
+		          </div>
+			    </div>	
+	  		</div>
+	  	</div>
+	  </div>
+	</div>
+  </div>
+  <div *ngIf="error" class="container text-center">
+  	<p>{{ error }}</p>
+  </div>
+  <div *ngIf="emptyResponse" class="container text-center">
+  	<p>No result was found</p>
+  </div>
+</div>
+

@@ -1,0 +1,123 @@
+#search-bar {
+  border-radius: 5px 0 0 5px;
+  width: 50%;
+}
+
+#submit-btn {
+  border-radius: 0 5px 5px 0;
+  width: 160px;
+  background-color: #4abd48;
+  border-color: #4abd48;
+}
+
+#search-bar, #submit-btn {
+  height: 45px;
+  font-size: 18px;
+}
+
+#submit-btn:hover {
+	background-color: #328a31;
+	border-color: #328a31;
+}
+
+.input-group {
+  width: 50%;
+}
+
+#search-component {
+	padding-top: 100px;
+	padding-bottom: 140px;
+}
+
+form {
+	margin-top: 50px;
+}
+
+.panel {
+	margin-top: 20px;
+	text-align: left;
+}
+
+.borderless td, .borderless th {
+    border: none;
+}
+
+#result {
+	background-color: #fafafa;
+	min-height: 350px;
+}
+
+#result img {
+	padding-right: 10px;
+}
+
+.jumbotron {
+	margin-bottom: 0;
+	padding-bottom: 100px;
+}
+
+.jumbotron td, .jumbotron th {
+	padding: 3px;
+	font-size: 16px;
+}
+
+#first-row .col-md-6 {
+	padding: 0;
+}
+
+.panel {
+	box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 2px 6px 0 rgba(0, 0, 0, 0.19);
+}
+
+#avatar {
+	width: 120px;
+}
+
+table th {
+	width: 150px;
+}
+
+#panel-left th {
+	font-weight: normal;
+}
+
+#panel-left td {
+	font-weight: bold;
+}
+
+#panel-right img {
+	position: absolute;
+	right: 30px;
+	bottom: 40px;
+}
+
+#panel-right {
+	padding-bottom: 28px;
+}
+
+#search {
+	background-color: #24292e;
+	opacity: 0.95;
+}
+
+#search h1, #search h3 {
+	color: white;
+}
+
+h4 {
+	color: #707172;
+}
+
+@media only screen and (max-width: 768px) {
+    
+    #search-bar {
+	  border-radius: 5px;
+	  margin-left: 25%;
+	}
+
+	#submit-btn {
+	  border-radius: 5px;
+	  margin-top: 10px;
+	  border-radius: 0;
+	}
+}

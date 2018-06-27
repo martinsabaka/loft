@@ -1,0 +1,49 @@
+body {
+	position: relative;
+	min-height: 100vh;
+	margin: 0;
+	background-image: url("./assets/images/github-bg.svg");
+	background-size: 100%;
+	background-repeat: no-repeat;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+html {
+	height: 100%;
+	width: 100%;
+}
+
+/* Remove the navbar's default margin-bottom and rounded borders */ 
+.navbar {
+  margin-bottom: 0;
+  border-radius: 0;
+  background-color: #24292e;
+  border: none;
+  height: 60px;
+}
+
+/* Footer background color */
+footer {
+	background-color: #24292e;
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+}
+
+footer img {
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+/*Navbar logo*/
+.navbar-brand {
+  padding: 0px;
+}
+
+.navbar-brand>img {
+  height: 100%;
+  width: auto;
+  margin-top: 5px;
+  margin-left: 5px;
+
+}
