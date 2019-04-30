@@ -1,21 +1,29 @@
-#search-bar {
+/*SEARCH*/
+
+.search {
+	background-image: url("../../assets/images/github-bg.svg");
+	background-size: 100%;
+	background-repeat: no-repeat;
+}
+
+.search input {
   border-radius: 5px 0 0 5px;
   width: 50%;
 }
 
-#submit-btn {
+.search button {
   border-radius: 0 5px 5px 0;
   width: 160px;
   background-color: #4abd48;
   border-color: #4abd48;
 }
 
-#search-bar, #submit-btn {
+.search input, .search button {
   height: 45px;
   font-size: 18px;
 }
 
-#submit-btn:hover {
+.search button:hover {
 	background-color: #328a31;
 	border-color: #328a31;
 }
@@ -24,7 +32,7 @@
   width: 50%;
 }
 
-#search-component {
+.search .container {
 	padding-top: 100px;
 	padding-bottom: 140px;
 }
@@ -42,26 +50,16 @@ form {
     border: none;
 }
 
-#result {
+.result {
 	background-color: #fafafa;
 	min-height: 350px;
 }
 
-#result img {
+.result img {
 	padding-right: 10px;
 }
 
-.jumbotron {
-	margin-bottom: 0;
-	padding-bottom: 100px;
-}
-
-.jumbotron td, .jumbotron th {
-	padding: 3px;
-	font-size: 16px;
-}
-
-#first-row .col-md-6 {
+.class .col-md-6 {
 	padding: 0;
 }
 
@@ -77,30 +75,30 @@ table th {
 	width: 150px;
 }
 
-#panel-left th {
+.panel-left th {
 	font-weight: normal;
 }
 
-#panel-left td {
+.panel-left td {
 	font-weight: bold;
 }
 
-#panel-right img {
+.panel-right img {
 	position: absolute;
 	right: 30px;
 	bottom: 40px;
 }
 
-#panel-right {
+.panel-right {
 	padding-bottom: 28px;
 }
 
-#search {
+.search .row {
 	background-color: #24292e;
 	opacity: 0.95;
 }
 
-#search h1, #search h3 {
+.search h1, .search h3 {
 	color: white;
 }
 
@@ -109,13 +107,12 @@ h4 {
 }
 
 @media only screen and (max-width: 768px) {
-    
-    #search-bar {
+	.search input {
 	  border-radius: 5px;
 	  margin-left: 25%;
 	}
 
-	#submit-btn {
+	.search button {
 	  border-radius: 5px;
 	  margin-top: 10px;
 	  border-radius: 0;

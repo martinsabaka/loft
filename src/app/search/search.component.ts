@@ -7,30 +7,30 @@ import { ProfileService } from '../services/profile.service';
   styleUrls: ['./search.component.css']
 })
 export class SearchComponent implements OnInit {
+  public input: string;
+  public repoDetails: any;
 
-	private input:string;
-  private repoDetails:any[];
-  error:null;
-  emptyResponse:boolean;
+  constructor(private profileService: ProfileService) {}
 
-  constructor(private profileService: ProfileService) {
-    
-  }
+  ngOnInit() {}
 
-  processForm(){
-    this.profileService.updateRepository(this.input).subscribe(profile => {
-      if (profile.total_count > 0){
-        this.profileService.getRepository(profile.items[0]['url']).subscribe(repoData => {
+  /**
+   * Processes data based on user input
+   */
+  public processForm() {
+    this.profileService.updateRepository(this.input).subscribe((profile: any) => {
+      if (profile.total_count > 0) {
+        this.profileService.getRepository(profile.items[0].url).subscribe(repoData => {
           this.repoDetails = repoData;
-          this.emptyResponse = false;
-        }, error => this.error = error);
+        }, error => {
+          console.log(error);
+        });
       } else {
-        this.emptyResponse = true;
+        this.repoDetails = null;
       }
-    }, error => this.error = error);
-  }
-
-  ngOnInit() {
+    }, error => {
+      console.log(error);
+    });
   }
 
 }
